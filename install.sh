@@ -5,7 +5,7 @@
 #https://github.com/mame82/P4wnP1
 #Blah
 
-Echo "Updating system before we start"
+echo "Updating system before we start"
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install python3-gpiozero
