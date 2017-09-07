@@ -54,6 +54,8 @@ fi
 
 #Enable services
 Echo "Enable Services"
+sudo chmod +x /home/pi/PiGadget/usb/init_usb.sh
+sudo chmod +x /home/pi/PiGadget/shutdown/pishutdown.py
 sudo systemctl enable pishutdown.service
 sudo systemctl enable pigadget.service
 
