@@ -12,7 +12,7 @@ https://github.com/gilyes/pi-shutdown
 
 https://github.com/mame82/P4wnP1
 
-
+I have been testing this on Raspbian Jessie, I wasnt able to reliably get things to work on Stretch, however I have not had the time to look at why.  Internet connectivity is required during the installation, and it is best if this is done via wifi, and not using g_ether, as the install script doesnt take this into account
 
 to install:
 
