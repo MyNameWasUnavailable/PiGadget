@@ -9,3 +9,12 @@ This project is heavily based on the work of others, and I do not claim this to 
 Projects I have based this on, include:
 https://github.com/gilyes/pi-shutdown
 https://github.com/mame82/P4wnP1
+
+
+to install:
+
+1: cd /home/pi
+2: git clone https://github.com/MyNameWasUnavailable/PiGadget.git
+3: cd PiGadget
+4: sudo chmod +x install.sh
+5: sudo ./install.sh
