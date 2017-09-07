@@ -21,7 +21,6 @@ GPIO.setup(shutdownPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 buttonPressedTime = None
 
-
 def buttonStateChanged(pin):
     global buttonPressedTime
 
