@@ -53,7 +53,7 @@ EOF
 fi
 
 #Enable services
-Echo "Enable Services"
+echo "Enable Services"
 sudo chmod +x /home/pi/PiGadget/usb/init_usb.sh
 sudo chmod +x /home/pi/PiGadget/shutdown/pishutdown.py
 sudo systemctl enable pishutdown.service
@@ -75,9 +75,9 @@ echo "Installing kernel update, which hopefully makes USB gadgets work again"
 sudo rpi-update
 
 echo "===================================================================================="
-Echo "Should be good to go"
-Echo ""
-Echo "Please reboot now!"
+echo "Should be good to go"
+echo ""
+echo "Please reboot now!"
 echo "===================================================================================="
 
 
