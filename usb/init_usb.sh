@@ -48,7 +48,7 @@ wdir=$( cd $(dirname $BASH_SOURCE[0]) && cd .. && pwd)
 		echo 1 > functions/hid.g1/protocol
 		echo 1 > functions/hid.g1/subclass
 		echo 8 > functions/hid.g1/report_length
-		cat $wdir/PiGadget/usb/conf/report_desc > functions/hid.g1/report_desc
+		cat $wdir/usb/conf/report_desc > functions/hid.g1/report_desc
 	# add OS specific device descriptors to force Windows to load RNDIS drivers ============================================================================= Witout this additional descriptors, most Windows system detect the 
 	# RNDIS interface as "Serial COM port" To prevent this, the Microsoft specific OS descriptors are added in here !! Important:
 	#	If the device already has been connected to the Windows System without providing the OS descriptor, Windows never asks again for them and thus never installs the RNDIS driver This behavior is driven by creation of 
