@@ -67,12 +67,12 @@ echo "Enable kernel module for USB Composite Device emulation..."
 if [ ! -f /tmp/modules ]; then sudo touch /etc/modules; fi
 sudo sed -n -i -e '/^libcomposite/!p' -e '$alibcomposite' /etc/modules
 
-echo "Installing kernel update, which hopefully makes USB gadgets work again"
+#echo "Installing kernel update, which hopefully makes USB gadgets work again"
 # still needed on current stretch releas, kernel 4.9.41+ ships still
 # with broken HID gadget module (installing still needs a cup of coffee)
 # Note:  last working Jessie version was the one with kernel 4.4.50+
 #        stretch kernel known working is 4.9.45+ (only available via update right now)
-sudo rpi-update
+#sudo rpi-update
 
 echo "===================================================================================="
 echo "Should be good to go"
