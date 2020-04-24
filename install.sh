@@ -8,7 +8,7 @@
 echo "Updating system before we start"
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get -y install python3-gpiozero
+sudo apt-get -y install python3-gpiozero dnsmasq
 # create systemd service unit for pigadget startup
 if [ ! -f /etc/systemd/system/pigadget.service ]; then
         echo "Injecting Pigadget startup script..."
@@ -53,12 +53,19 @@ EOF
 fi
 # Create static IP on USB0
         echo "Injecting static ip USB0"
-        cat <<- EOF | sudo tee /etc/dhcpcd.conf > /dev/null
+        cat <<- EOF | sudo tee -a /etc/dhcpcd.conf > /dev/null
 Interface usb0
 fallback pi_rndis
 profile pi_rndis
 static ip_address=192.168.1.100/24
 
+EOF
+# Create static IP on USB0
+        echo "Configure DHCP server on USB0"
+        cat <<- EOF | sudo tee -a /etc/dnsmasq.conf > /dev/null
+dhcp-range=192.168.1.10,192.168.1.11,12h
+dhcp-option=3
+dhcp-option=6
 EOF
 
 #Enable services
