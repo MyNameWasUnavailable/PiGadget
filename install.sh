@@ -51,6 +51,15 @@ if [ ! -f /etc/systemd/system/pishutdown.service ]; then
                 WantedBy=multi-user.target
 EOF
 fi
+# Create static IP on USB0
+        echo "Injecting static ip USB0"
+        cat <<- EOF | sudo tee /etc/dhcpcd.conf > /dev/null
+Interface usb0
+fallback pi_rndis
+profile pi_rndis
+static ip_address=192.168.1.100/24
+
+EOF
 
 #Enable services
 echo "Enable Services"
